@@ -128,7 +128,7 @@ static khux_file_t* kfopen(const char* path) {
 
     for (int i = 0; i < kfile->count; i++) {
         khux_fseeko(kfile->files[i], 0, SEEK_END);
-        kfile->sizes[i] += khux_ftello(kfile->files[i]);
+        kfile->sizes[i] = khux_ftello(kfile->files[i]);
         khux_fseeko(kfile->files[i], 0, SEEK_SET);
         kfile->size += kfile->sizes[i];
     }
