@@ -84,7 +84,7 @@
     }
 
     if (tmpbuf_len > pngbuf_len) {
-        printf("png too big: size %x vs max %x\n", tmpbuf_len, pngbuf_len);
+        printf("png too big: size %zx vs max %x\n", tmpbuf_len, pngbuf_len);
         free(tmpbuf);
         return 0;
     }
